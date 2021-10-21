@@ -1,3 +1,11 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000 // this will come from env file when we added environment setup.
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
+  
+  app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+  })
