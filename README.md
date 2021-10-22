@@ -6,3 +6,5 @@
 * create a file name 'index.js'
 * declare express, app and port number. Write a get method simply just showing a message when run server.
 * run the file like as any javascript file. You will see the hello world message from app.get method.
+* Right now our server is not showing the updated data if we change anything in the function. We need to stop the server and open server again.
+* To avoid this problem I install 'nodemon' by using following command- 'npm install -g nodemon'. Here I use g for install it globally.
