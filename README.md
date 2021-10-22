@@ -8,3 +8,7 @@
 * run the file like as any javascript file. You will see the hello world message from app.get method.
 * Right now our server is not showing the updated data if we change anything in the function. We need to stop the server and open server again.
 * To avoid this problem I install 'nodemon' by using following command- 'npm install -g nodemon'. Here I use g for install it globally.
+* in the package.json file I added two properties 
+    `"start": "node index.js",
+    "start-dev": "nodemon index.js",`
+* 'npm run start-dev' So now we will see the changed data if we change anything in our function.
