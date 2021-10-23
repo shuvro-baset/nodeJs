@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000 // this will come from env file when we added environment setup.
+const port = process.env.PORT || 5000 // this will come from env file when we added environment setup.
 
 // get method. using default url.
 app.get('/', (req, res) => {
@@ -18,11 +18,11 @@ const users = [
 ]
 // get users using '/user' url
 app.get('/users', (req, res) => {
-  const search = req.query.search;
+  const search = req.query.search; // getting search text
   // use query parameter
   if (search) {
-      const searchResult = users.filter(user => user.name.toLocaleLowerCase().includes(search));
-      res.send(searchResult);
+      const searchResult = users.filter(user => user.name.toLocaleLowerCase().includes(search)); // search query
+      res.send(searchResult); // send the search results
   }
   else {
       res.send(users)
