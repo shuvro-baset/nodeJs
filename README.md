@@ -20,5 +20,8 @@
 * I make some users in the 'user' variable. Its an array data. I will show this in '/users' route. As it is a get users data so I use app.get method. Taking a req and res as parameters. and send the response(res.send(users)) to the client and client can see all the users data.
 
 # get dynamic data.
-* In the above we see all the users data and now I want to show dynamic data. Like specific users data. '/users/:id' in this route 'id' is users id. This id is for the specific users. '/users/3' in this route we will see users data which user has id==3.
-* Its also a get method. But we have to receive the id which was typed in the url. 
+* In the above section we see all the users data and now I want to show dynamic data. Like specific users data. '/users/:id' in this route 'id' is users id. This id is for the specific users. '/users/3' in this route we will see users data which user has id==3.
+* Its also a get method. But we have to receive(req.params.id) the id which was typed in the url. as we a have users array so we just get the user data from the users array using array slice method or array index method. Then pass it to the app.send(data)
+
+# search method 
+* Its very easy to implement this. receive the search text by (req.query.search) then filter this text from the data and pass the data to app.send(data)
