@@ -41,8 +41,14 @@ app.get('/users/:id', (req, res) => {
 })
 
 app.post('/users', (req, res) =>{
-  console.log("yes post method hitting....")
-  res.send("ok post method hit.")
+    console.log("I am hitting...");
+    const newUser = req.body; // receiving new user data
+    newUser.id = users.length; // set new users id
+    users.push(newUser); // adding user data to the users array
+    console.log('after receiving data ', req.body)
+    console.log("newUser: ", newUser);
+    // res.send(JSON.stringify(newUser))
+    res.json(newUser) // sending a response to the frontend
 })
 
 app.listen(port, () => {

@@ -25,3 +25,25 @@
 
 # search method 
 * Its very easy to implement this. receive the search text by (req.query.search) then filter this text from the data and pass the data to app.send(data)
+
+# connect react app and get data from nodeJs server
+* I create a new react app named 'crud-app'
+* In the app.js I write some code to fetch users data from our nodeJs server using useState and useEffect hook.
+* But It did not work properly and give an error. Here is origin issue. Our react app and nodeJs server are two different origin. So we need to do something for this. And I will use 'cors' for cross-origin requests.
+* I install 'npm install cors'
+* then add two lines into index.js file -
+    - const cors = require('cors'); // call cors origin.
+    - app.use(cors()); // use cors origin for this app.
+* Now We can see the user data in our react application. I have the users data and do map function and show all users data into the react application ui.
+
+# -------- `POST` method ---------- 
+* This is time user will post something to the backend. I use a html form that have some input data where user will give user data and that data will come to the backend side. 
+* Need useRef hooks for receiving input value. Make a handler function(handleAddUser) for onSubmit data.
+* add following line into index.js file (app.use(express.json());)
+* for passing the data to the backend from frontend I write a fetch method. In this fetch I added a url as usual but in this time I added some property. 
+    - method: 'post',
+    - headers: {
+        'content-type': 'application/json'
+      },
+    - body: JSON.stringify(newUser)
+* then this data will come to the backend server and sending a response data to the frontend. 
