@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors'); // call cors origin.
 const app = express();
 app.use(cors()); // use cors origin for this app.
-
+app.use(express.json()); // receive stringify data and convert it json
 const port = process.env.PORT || 5000 // this will come from env file when we added environment setup.
 
 // get method. using default url.
@@ -40,7 +40,10 @@ app.get('/users/:id', (req, res) => {
   res.send(user);
 })
 
-
+app.post('/users', (req, res) =>{
+  console.log("yes post method hitting....")
+  res.send("ok post method hit.")
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
