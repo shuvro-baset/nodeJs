@@ -18,10 +18,18 @@ const users = [
 ]
 // get users using '/user' url
 app.get('/users', (req, res) => {
-  res.send('Here will come all users')
-})
+  const search = req.query.search;
+  // use query parameter
+  if (search) {
+      const searchResult = users.filter(user => user.name.toLocaleLowerCase().includes(search));
+      res.send(searchResult);
+  }
+  else {
+      res.send(users)
+  }
+});
 
-// dynamic api
+// dynamic api/ getting specific users data using id params.
 app.get('/users/:id', (req, res) => {
   const id = req.params.id; // getting requested id
   const user = users[id]
