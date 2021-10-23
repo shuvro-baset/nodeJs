@@ -47,3 +47,9 @@
       },
     - body: JSON.stringify(newUser)
 * then this data will come to the backend server and sending a response data to the frontend. 
+
+
+# ----------- `node-with-mongodb` --------------- 
+* mongodb database 
+* npm i express cors mongodb  // install required packages.
+* 
