@@ -12,18 +12,33 @@ app.use(express.json());
 // database connection url
 const uri = "mongodb+srv://shuvro-75:Shuvro7523@cluster0.oh18i.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  console.log("hitting the database");
-  const user = { name: "test", email: "test@example.com"}
-  collection.insertOne(user)
-    .then(() =>{
-      console.log("insert success...")
-    })
-  // perform actions on the collection object
-  // client.close();
-});
 
+async function run() {
+  try {
+      await client.connect();
+      const database = client.db("crudDb");
+      const usersCollection = database.collection("users");
+
+      // GET API
+      app.get('/users', async (req, res) => {
+        const cursor = usersCollection.find({});
+        const users = await cursor.toArray();
+        res.send(users);
+    });
+      // POST API
+      app.post('/users', async (req, res) => {
+        const newUser = req.body;
+        const result = await usersCollection.insertOne(newUser);
+        console.log('got new user', req.body);
+        console.log('added user', result);
+        res.json(result);
+  });
+  }
+  finally {
+        // await client.close();
+  }
+}
+run().catch(console.dir)
 app.get('/', (req, res) => {
     res.send("Running My CRUD server........ ")
 })
