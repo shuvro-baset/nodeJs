@@ -72,3 +72,8 @@
 - app.listen(port, anonymous function() {
     listening message from port connection.
 })
+
+---------- post -------------- 
+- make a form for post input data into react 
+- write some useRef hooks for name(nameRef), email(emailRef) and others which I want to give input data.
+- make a onSubmit function for receiving input data.
