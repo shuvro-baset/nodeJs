@@ -7,6 +7,7 @@ const port = 5000;
 
 // use cors into my app 
 app.use(cors());
+// receive json data from frontend
 app.use(express.json());
 
 

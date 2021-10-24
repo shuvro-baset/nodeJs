@@ -54,3 +54,21 @@
 * npm i express cors mongodb  // install required packages.
 * connect mongoDb database in my project.
 * 
+
+--------------- ######## ----------------- 
+- install node 'npm init' on 'npm -y' 
+- install express 'npm install express --save'
+- install nodemon 'npm install -g nodemon'
+- write two parameters into the package.json file. (start, start-dev)
+- install cors 'npm install cors'
+- create react app
+- index.js (express, cors, app,  port, use cors, use express.json)
+
+
+---------- get -------------- 
+- app.get('url', req, res){
+    res.send(data or message.)
+}
+- app.listen(port, anonymous function() {
+    listening message from port connection.
+})
