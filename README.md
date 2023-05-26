@@ -3,7 +3,7 @@
 # --------- `node-start` ---------- 
 # get start and print hello world
 * start nodeJs using following command 'npm init'. and press enter again and again. 
-* we can also do the same thing using 'npm -y' for shortcut way. 
+* we can also do the same thing using 'npm init -y' for shortcut way. 
 * install express server 'npm install express --save'
 * create a file name 'index.js'
 * declare express, app and port number. Write a get method simply just showing a message when run server.
@@ -11,7 +11,7 @@
 * Right now our server will not show the updated data if we change anything in the function. We need to stop the server and open server again.
 * To avoid this problem I install 'nodemon' by using following command- 'npm install -g nodemon'. Here I use g for install it globally.
 * in the package.json file I added two properties 
-    `"start": "node index.js",
+    "start": "node index.js",
     "start-dev": "nodemon index.js",`
 * 'npm run start-dev' So now we will see the changed data if we change anything in our function.
 
@@ -56,11 +56,12 @@
 * 
 
 --------------- ######## ----------------- 
-- install node 'npm init' on 'npm -y' 
+- install node 'npm init' on 'npm init -y' 
 - install express 'npm install express --save'
-- install nodemon 'npm install -g nodemon'
+- install nodemon 'npm install -g nodemon' (optional, if already installed it globally then ignore it)
 - write two parameters into the package.json file. (start, start-dev)
 - install cors 'npm install cors'
+- all install in one command (npm install express mongodb cors dotenv)
 - create react app
 - index.js (express, cors, app,  port, use cors, use express.json)
 
@@ -77,3 +78,6 @@
 - make a form for post input data into react 
 - write some useRef hooks for name(nameRef), email(emailRef) and others which I want to give input data.
 - make a onSubmit function for receiving input data.
+- in the constant variables save all input data ...ref.current.value
+- make an object of data. fetch backend uri and post the data into body attribute.
+- backend server receive the data and pass it to the database and back a response to the frontend server.
